@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  confluence:
+    image: atlassian/confluence-server:latest
+    ports:
+      - "8090:8090"
+    environment:
+      - ATL_JAVA_OPTS=-Xms512m -Xmx1024m
+    volumes:
+      - confluence_home:/var/atlassian/application-data/confluence
+
+volumes:
+  confluence_home:

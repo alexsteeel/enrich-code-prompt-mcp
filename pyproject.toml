@@ -8,6 +8,10 @@ authors = ["Example <example@example.com>"]
 python = "^3.10"
 structlog = "*"
 python-dotenv = "*"
+atlassian-python-api = "*"
+markdownify = "*"
+beautifulsoup4 = "*"
+lxml = "*"
 
 [tool.poetry.scripts]
 mcp = "mcp.main:main"
