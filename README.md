@@ -2,6 +2,19 @@
 
 This repository contains a collection of utilities and agents for building the Multi-agent Control Plane (MCP) server.
 
+## Environment
+
+Copy `.env.example` to `.env` and fill in the Confluence credentials:
+
+```
+CONFLUENCE_URL
+CONFLUENCE_USERNAME
+CONFLUENCE_API_TOKEN
+CONFLUENCE_SPACE_KEY
+```
+
+These variables are used by the integration tests and the Confluence client.
+
 ## Packages
 
 - [agent_code](packages/agent_code/README.md)
@@ -13,3 +26,9 @@ This repository contains a collection of utilities and agents for building the M
 - [md_vector_index](packages/md_vector_index/README.md)
 - [youtrack_exporter](packages/youtrack_exporter/README.md)
 - [docker](docker/README.md)
+
+To spin up a local Confluence instance for integration tests:
+
+```bash
+docker compose -f docker/docker-compose.integration.yml up -d
+```
