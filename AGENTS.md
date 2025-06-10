@@ -85,6 +85,10 @@ pip install pytest pytest-asyncio pytest-cov pytest-mock
   - Unit/integration tests for each package
 ```
 
+Each package directory must contain a `README.md` with a short description and a link back to the main `README.md`. The project root `README.md` must link to every package README.
+Integration tests can be run against a local Confluence instance provided by `docker/docker-compose.integration.yml`.
+All environment-specific setup steps (such as configuring credentials or starting Docker services) must be documented in the appropriate README files.
+
 ## 🏗️ Agents.md - System Architecture
 
 ```markdown
@@ -282,94 +286,7 @@ flutter create . --platforms=web,ios,android
 flutter pub add http provider
 ```
 
-## 📋 Issue List
-
-**Issue #1: Set up project structure**
-- Initialize project with Poetry/pip
-- Configure environment variables
-- Set up logging with structlog
-- Create directory structure
-
-**Issue #2: Implement Confluence integration**
-- Create Confluence client wrapper
-- Parse Storage Format to Markdown
-- Handle GitLab and yEd plugin content
-- Implement pagination and error handling
-
-**Issue #3: Implement YouTrack integration**
-- Set up OAuth2 authentication
-- Create issue export functionality
-- Convert issues to Markdown
-- Handle attachments and comments
-
-**Issue #4: Set up ChromaDB vector storage**
-- Initialize three collections (docs, code, issues)
-- Configure persistence settings
-- Implement connection pooling
-- Create backup/restore functionality
-
-**Issue #5: Implement document chunking**
-- Create MarkdownHeaderTextSplitter
-- Implement chunk overlap strategy
-- Preserve metadata through chunking
-- Handle special content (tables, code blocks)
-
-**Issue #6: Build embedding pipeline**
-- Configure sentence-transformers models
-- Implement batch processing
-- Add caching layer
-- Monitor embedding performance
-
-**Issue #7: Create Documentation Agent**
-- Implement search functionality
-- Add relevance scoring
-- Generate citations
-- Handle Confluence-specific content
-
-**Issue #8: Create Code Agent**
-- Parse local repository with GitPython
-- Implement tree-sitter for multi-language support
-- Extract functions, classes, docstrings
-- Index external dependencies
-
-**Issue #9: Create Issue Agent**
-- Implement YouTrack search
-- Parse issue metadata
-- Link related issues
-- Generate issue summaries
-
-**Issue #10: Build agent orchestration**
-- Create CrewAI agent manager
-- Implement request routing
-- Add multi-agent coordination
-- Set up result aggregation
-
-**Issue #11: Create FastAPI backend**
-- Implement all API endpoints
-- Add request validation
-- Set up error handling
-- Create OpenAPI documentation
-
-**Issue #12: Build MCP server**
-- Create proxy to FastAPI
-- Implement MCP protocol
-- Add request/response logging
-- Handle authentication
-
-**Issue #13: Create Flutter frontend**
-- Set up Flutter project structure
-- Create search interface for all agents
-- Implement result visualization
-- Add configuration screens
-- Build for web and mobile platforms
-
-**Issue #14: Create comprehensive tests**
-- Unit tests for each component
-- Integration tests for agents
-- E2E tests for API
-
-**Issue #15: Write documentation**
-- API usage guide
-- Deployment instructions
-- Configuration reference
-- Troubleshooting guide
+Additional tasks are tracked in `TASKS.md`.  Each issue lists the work that can
+be performed automatically (**AI tasks**) and the manual steps that require a
+human (**human tasks**).  Manual tasks include actions such as running the
+Confluence Docker container and verifying integration tests.
