@@ -18,7 +18,8 @@ poetry run pytest -q
 
 ## Environment
 
-Copy `.env.example` to `.env` and fill in the Confluence credentials:
+Copy `.env.example` to `.env` and fill in the Confluence credentials. The
+Confluence Docker container and test suite both load this file automatically:
 
 ```
 CONFLUENCE_URL
@@ -41,7 +42,8 @@ These variables are used by the integration tests and the Confluence client.
 - [youtrack_exporter](packages/youtrack_exporter/README.md)
 - [docker](docker/README.md)
 
-To spin up a local Confluence instance for integration tests:
+To spin up a local Confluence instance for integration tests (it reads
+credentials from `.env`):
 
 ```bash
 docker compose -f docker/docker-compose.integration.yml up -d

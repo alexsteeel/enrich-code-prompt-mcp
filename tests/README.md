@@ -2,7 +2,8 @@
 
 Unit tests run without external services. Integration tests require a Confluence container or a real instance.
 
-1. Copy `.env.example` to `.env` and fill in the Confluence variables.
+1. Copy `.env.example` to `.env` and fill in the Confluence variables. The test
+   suite automatically loads this file.
 2. Start the container:
    ```bash
    docker compose -f docker/docker-compose.integration.yml up -d

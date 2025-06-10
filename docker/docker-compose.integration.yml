@@ -4,6 +4,8 @@ services:
     image: atlassian/confluence-server:latest
     ports:
       - "8090:8090"
+    env_file:
+      - ../.env
     environment:
       - ATL_JAVA_OPTS=-Xms512m -Xmx1024m
     volumes:
