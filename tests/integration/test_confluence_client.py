@@ -1,3 +1,8 @@
+"""Integration tests for the Confluence client.
+
+Requires environment variables described in tests/README.md.
+"""
+
 import os
 import sys
 from pathlib import Path

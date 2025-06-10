@@ -87,6 +87,7 @@ pip install pytest pytest-asyncio pytest-cov pytest-mock
 
 Each package directory must contain a `README.md` with a short description and a link back to the main `README.md`. The project root `README.md` must link to every package README.
 Integration tests can be run against a local Confluence instance provided by `docker/docker-compose.integration.yml`.
+All environment-specific setup steps (such as configuring credentials or starting Docker services) must be documented in the appropriate README files.
 
 ## 🏗️ Agents.md - System Architecture
 

@@ -2,6 +2,20 @@
 
 This repository contains a collection of utilities and agents for building the Multi-agent Control Plane (MCP) server.
 
+## Setup
+
+This project uses [Poetry](https://python-poetry.org/) for dependency management. Install Poetry and then run:
+
+```bash
+poetry install
+```
+
+This reads `pyproject.toml` and creates a virtual environment with all dependencies. Run the tests with:
+
+```bash
+poetry run pytest -q
+```
+
 ## Environment
 
 Copy `.env.example` to `.env` and fill in the Confluence credentials:
@@ -32,3 +46,5 @@ To spin up a local Confluence instance for integration tests:
 ```bash
 docker compose -f docker/docker-compose.integration.yml up -d
 ```
+
+For details on running the test suite and configuring the Confluence container, see [tests/README.md](tests/README.md).
